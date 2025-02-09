@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body { margin: 0; }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .header_text {
+            font-size: 2em;
+            color: red;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #nobutton {
+            position: absolute;
+        }
+        #hurray-section {
+            display: none;
+        }
+        .hurray_text {
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- Valentine Section -->
+    <div class="container" id="valentine-section">
+        <h1 class="header_text">Will you be my valentine?</h1>
+        <img src="C:/Users/A/Downloads/i.jpg" alt="Valentine Image" />
+        <div class="button">
+            <button class="btn" id="yesbutton" onclick="showHurraySection()">Yes</button>
+            <button class="btn" id="nobutton" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <!-- Hurray Section -->
+    <div class="container" id="hurray-section">
+        <h1 class="hurray_text">Hurray! i love you too!</h1>
+        <img src="C:/Users/A/Downloads/hurray.jpg" alt="Hurray Image" />
+    </div>
+
+    <script>
+        function showHurraySection() {
+            document.getElementById('valentine-section').style.display = 'none';
+            document.getElementById('hurray-section').style.display = 'block';
+        }
+
+        function moveButton() {
+            const noButton = document.getElementById('nobutton');
+            const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
